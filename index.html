@@ -270,11 +270,17 @@
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease;
+            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        box-shadow 0.4s ease;
+            cursor: pointer;
         }
 
         .phone-frame:hover {
-            transform: translateY(-6px);
+            width: 340px;
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            z-index: 10;
         }
 
         .phone-frame img {
@@ -653,6 +659,10 @@
                 border-radius: 20px;
             }
 
+            .phone-frame:hover {
+                width: 280px;
+            }
+
             .screenshots-scroll {
                 justify-content: flex-start;
                 padding: 0 1.5rem 2rem;
@@ -671,6 +681,10 @@
             .phone-frame {
                 width: 140px;
                 border-radius: 18px;
+            }
+
+            .phone-frame:hover {
+                width: 240px;
             }
         }
 
