@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMEN — All 21 free workshops, August 2026 | Princeton area libraries</title>
+<meta name="description" content="Every LUMEN workshop this August: 21 free hands-on sessions for grades 5–8 at five libraries around Mercer County, NJ. Dates, times, and where to register.">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  :root {
+    --font-body: Calibri, 'Carlito', 'Segoe UI', sans-serif;
+    --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+
+    --bg: #000;
+    --bg-elev: #0a0a0a;
+    --text: #ffffff;
+    --text-dim: rgba(255, 255, 255, 0.62);
+    --text-faint: rgba(255, 255, 255, 0.38);
+    --text-ghost: rgba(255, 255, 255, 0.18);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.18);
+    --glass: rgba(255, 255, 255, 0.025);
+    --glass-hi: rgba(255, 255, 255, 0.05);
+
+    --princeton: #6FA8FF;       --princeton-rgb: 111, 168, 255;
+    --plainsboro: #56DAB1;      --plainsboro-rgb: 86, 218, 177;
+    --hightstown: #B894FF;      --hightstown-rgb: 184, 148, 255;
+    --hickory: #F7B567;         --hickory-rgb: 247, 181, 103;
+    --robbinsville: #FF8AAE;    --robbinsville-rgb: 255, 138, 174;
+
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+    --r-sm: 6px;
+    --r-md: 10px;
+    --r-lg: 16px;
+    --r-xl: 24px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-feature-settings: "ss01", "cv11", "tnum";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* faint atmospheric glow — top-down, very subtle */
+    background-image:
+      radial-gradient(ellipse 80vw 60vh at 50% -10%, rgba(255, 255, 255, 0.04), transparent 70%),
+      radial-gradient(ellipse 120vw 80vh at 50% 110%, rgba(184, 148, 255, 0.025), transparent 70%);
+  }
+
+  /* ----- layout ----- */
+
+  .page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 56px 32px 96px;
+  }
+
+  .page-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 56px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 64px;
+  }
+  /* This stylesheet has no global anchor reset, so anything that is a
+     link has to say so — or unsay it, as here. */
+  .brand {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text);
+    text-decoration: none;
+    transition: opacity 0.25s var(--ease);
+  }
+  .brand:hover,
+  .brand:focus-visible { opacity: 0.7; }
+  .brand .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #f76f53;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: 2px;
+    box-shadow: 0 0 12px #f76f53;
+  }
+  .head-meta {
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ----- hero ----- */
+
+  .hero { margin-bottom: 80px; }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 8vw, 88px);
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+  .hero h1 .year {
+    color: var(--text-dim);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+  }
+  .hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .hero-stat .num {
+    display: block;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums;
+  }
+  .hero-stat .lbl {
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ----- sign-up band ----- */
+
+  /* Deliberately not styled as a banner or a highlighted callout: the
+     schedule below is what the visitor came for, and the three cards
+     read as one more band of the same document. They earn attention by
+     being the only clickable things above the fold, not by shouting. */
+  .signup { margin-bottom: 80px; }
+
+  .signup-lede {
+    max-width: 62ch;
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-bottom: 24px;
+  }
+  .signup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(238px, 1fr));
+    gap: 12px;
+  }
+  .signup-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 18px 20px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--r-lg);
+    background: var(--glass);
+    color: var(--text);
+    text-decoration: none;
+    transition: background 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.3s var(--ease);
+  }
+  .signup-card:hover,
+  .signup-card:focus-visible {
+    background: var(--glass-hi);
+    border-color: rgba(255, 255, 255, 0.32);
+    transform: translateY(-2px);
+  }
+  .signup-name {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+  }
+  .signup-note {
+    font-size: 12px;
+    color: var(--text-faint);
+    line-height: 1.45;
+  }
+  .signup-go {
+    margin-top: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  .signup-card:hover .signup-go,
+  .signup-card:focus-visible .signup-go { color: var(--text); }
+
+  .signup-help {
+    max-width: 62ch;
+    margin-top: 20px;
+    font-size: 12.5px;
+    color: var(--text-faint);
+    line-height: 1.6;
+  }
+  .signup-help a,
+  .foot-links a {
+    color: var(--text-dim);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--border-strong);
+    transition: color 0.25s var(--ease), text-decoration-color 0.25s var(--ease);
+  }
+  .signup-help a:hover,
+  .signup-help a:focus-visible,
+  .foot-links a:hover,
+  .foot-links a:focus-visible {
+    color: var(--text);
+    text-decoration-color: currentColor;
+  }
+
+  /* ----- section labels ----- */
+
+  .section-label {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 24px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  section + section { margin-top: 80px; }
+
+  /* ----- legend / filter cards ----- */
+
+  .legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(206px, 1fr));
+    gap: 12px;
+  }
+  .legend-card {
+    --c: var(--text);
+    --c-rgb: 255, 255, 255;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    padding: 18px 18px 16px;
+    text-align: left;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition:
+      background 0.4s var(--ease),
+      border-color 0.4s var(--ease),
+      transform 0.4s var(--ease),
+      box-shadow 0.4s var(--ease),
+      opacity 0.4s var(--ease);
+  }
+  .legend-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(ellipse 80% 70% at 50% 110%, rgba(var(--c-rgb), 0.18), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s var(--ease);
+    pointer-events: none;
+  }
+  .legend-card:hover,
+  .legend-card[aria-pressed="true"] {
+    background: var(--glass-hi);
+    border-color: rgba(var(--c-rgb), 0.5);
+    transform: translateY(-2px);
+    box-shadow:
+      0 12px 32px -12px rgba(var(--c-rgb), 0.35),
+      0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  }
+  .legend-card:hover::before,
+  .legend-card[aria-pressed="true"]::before {
+    opacity: 1;
+  }
+  .legend-card-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .legend-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--c);
+    box-shadow: 0 0 12px var(--c), 0 0 4px var(--c);
+    flex-shrink: 0;
+  }
+  .legend-name {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--c);
+  }
+  .legend-meta {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+  .legend-topics {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.04em;
+  }
+  .legend-count {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-faint);
+    font-weight: 500;
+  }
+
+  /* ----- ribbon timeline ----- */
+
+  .ribbon {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 24px 28px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .ribbon-axis {
+    display: grid;
+    grid-template-columns: 168px 1fr;
+    gap: 24px;
+    align-items: center;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .ribbon-axis-spacer { color: var(--text-faint); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .ribbon-axis-days {
+    display: grid;
+    grid-template-columns: repeat(31, 1fr);
+    gap: 0;
+    font-size: 9px;
+    color: var(--text-faint);
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+  }
+  .ribbon-axis-days span {
+    padding: 4px 0;
+    border-radius: 3px;
+  }
+  .ribbon-axis-days span.weekend { color: var(--text-ghost); }
+  .ribbon-axis-days span.major { color: var(--text-dim); font-weight: 600; }
+
+  .ribbon-row {
+    display: grid;
+    grid-template-columns: 168px 1fr;
+    gap: 24px;
+    align-items: center;
+    padding: 8px 0;
+    transition: opacity 0.4s var(--ease);
+  }
+  .ribbon-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+  }
+  .ribbon-label .legend-dot {
+    width: 7px;
+    height: 7px;
+  }
+  .ribbon-label .lib-name { color: var(--c); }
+  .ribbon-track {
+    display: grid;
+    grid-template-columns: repeat(31, 1fr);
+    gap: 0;
+    height: 28px;
+    align-items: center;
+    position: relative;
+  }
+  .ribbon-track::before {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    top: 50%;
+    height: 1px;
+    background: var(--border);
+    transform: translateY(-0.5px);
+  }
+  .ribbon-cell {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .ribbon-cell.weekend::after {
+    content: '';
+    position: absolute;
+    inset: 8px 1px;
+    background: rgba(255, 255, 255, 0.015);
+    border-radius: 2px;
+  }
+  .ribbon-pin {
+    position: relative;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--c);
+    box-shadow:
+      0 0 10px var(--c),
+      0 0 18px rgba(var(--c-rgb), 0.4);
+    transition:
+      transform 0.4s var(--ease),
+      box-shadow 0.4s var(--ease);
+  }
+  .ribbon-pin:hover {
+    transform: scale(1.45);
+    z-index: 2;
+  }
+
+  /* ----- calendar grid ----- */
+
+  .calendar {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .cal-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: rgba(255, 255, 255, 0.012);
+    border-bottom: 1px solid var(--border);
+  }
+  .cal-header > div {
+    padding: 14px 16px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    text-align: left;
+  }
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .cal-day {
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 12px 12px;
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+  }
+  .cal-day:nth-child(7n) { border-right: none; }
+  .cal-grid > .cal-day:nth-last-child(-n+1):not(:nth-child(7n)) ~ .cal-day,
+  .cal-grid .cal-day:last-child { border-bottom: none; }
+  .cal-day.empty {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .cal-day.weekend {
+    background: rgba(255, 255, 255, 0.008);
+  }
+  .cal-date {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-faint);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+  .cal-day.has-events .cal-date {
+    color: var(--text);
+    font-weight: 600;
+  }
+  .cal-events {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 2px;
+  }
+  .cal-event {
+    --c: var(--text);
+    --c-rgb: 255, 255, 255;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px 6px 10px;
+    background: rgba(var(--c-rgb), 0.08);
+    border-radius: var(--r-sm);
+    font-size: 11px;
+    line-height: 1.2;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+  }
+  .cal-event::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--c);
+    box-shadow: 0 0 8px var(--c);
+  }
+  .cal-event:hover {
+    background: rgba(var(--c-rgb), 0.16);
+    transform: translateX(2px);
+  }
+  .cal-event-time {
+    font-weight: 600;
+    color: var(--c);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+    flex-shrink: 0;
+  }
+  .cal-event-name {
+    color: var(--text);
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* ----- list view ----- */
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .list-day {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 28px;
+    align-items: flex-start;
+    padding: 22px 24px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    transition:
+      background 0.4s var(--ease),
+      border-color 0.4s var(--ease),
+      transform 0.4s var(--ease);
+  }
+  .list-day:hover {
+    background: var(--glass-hi);
+    border-color: var(--border-strong);
+  }
+  .list-date {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .list-date-num {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .list-date-day {
+    font-size: 13px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .list-date-count {
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .list-events {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .list-event {
+    --c: var(--text);
+    --c-rgb: 255, 255, 255;
+    display: grid;
+    grid-template-columns: 14px 130px 1fr auto;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    background: rgba(var(--c-rgb), 0.04);
+    border: 1px solid rgba(var(--c-rgb), 0.12);
+    border-radius: var(--r-sm);
+    transition:
+      background 0.4s var(--ease),
+      border-color 0.4s var(--ease),
+      transform 0.4s var(--ease),
+      opacity 0.4s var(--ease);
+  }
+  .list-event:hover {
+    background: rgba(var(--c-rgb), 0.08);
+    border-color: rgba(var(--c-rgb), 0.28);
+    transform: translateX(3px);
+  }
+  .list-event .legend-dot {
+    width: 8px;
+    height: 8px;
+  }
+  .list-event-time {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--c);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+  .list-event-info {
+    font-size: 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .list-event-info .lib {
+    font-weight: 500;
+  }
+  .list-event-tag {
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 9999px;
+    background: rgba(247, 181, 103, 0.12);
+    color: var(--hickory);
+    border: 1px solid rgba(247, 181, 103, 0.3);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ----- focus filtering ----- */
+  /* When a library is focused, dim everything that doesn't belong to it */
+  body[data-focus] [data-lib]:not([data-active]),
+  body[data-focus] .legend-card:not([aria-pressed="true"]) {
+    opacity: 0.22;
+  }
+
+  /* ----- footer ----- */
+  footer {
+    margin-top: 96px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px 32px;
+    font-size: 12px;
+    color: var(--text-faint);
+  }
+  .foot-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+  }
+
+  /* ----- entry animations ----- */
+
+  @keyframes lift-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    animation: lift-in 0.9s var(--ease) both;
+  }
+
+  /* ----- responsive ----- */
+
+  @media (max-width: 900px) {
+    .page { padding: 32px 20px 64px; }
+    .page-head { padding-bottom: 32px; margin-bottom: 40px; }
+    section + section { margin-top: 56px; }
+    .hero { margin-bottom: 56px; }
+    .hero-stats { gap: 28px; }
+    .hero-stat .num { font-size: 22px; }
+
+    .page-head { flex-wrap: wrap; gap: 10px 24px; }
+    .signup { margin-bottom: 56px; }
+    .signup-card { padding: 16px 18px; }
+    footer { flex-direction: column; }
+
+    .ribbon { padding: 16px; }
+    .ribbon-axis,
+    .ribbon-row { grid-template-columns: 110px 1fr; gap: 12px; }
+    .ribbon-label { font-size: 11px; }
+
+    .cal-day { min-height: 88px; padding: 8px 6px; }
+    .cal-event { font-size: 9.5px; padding: 4px 6px 4px 8px; }
+    .cal-event-name { display: none; }
+
+    .list-day { grid-template-columns: 1fr; gap: 14px; padding: 16px; }
+    .list-date { flex-direction: row; align-items: baseline; gap: 12px; }
+    .list-date-num { font-size: 22px; }
+    .list-event { grid-template-columns: 12px 90px 1fr; padding: 10px 12px; }
+    .list-event-tag { display: none; }
+  }
+
+  @media (max-width: 540px) {
+    .cal-header > div { padding: 8px 6px; font-size: 9px; letter-spacing: 0.1em; }
+    .cal-day { min-height: 64px; }
+    .cal-date { font-size: 12px; }
+    .cal-event { padding: 3px 5px 3px 7px; }
+    .cal-event-time { font-size: 9px; }
+  }
+
+  /* ----- reduced motion ----- */
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* ----- print ----- */
+
+  @media print {
+    body {
+      background: #fff;
+      color: #000;
+      background-image: none;
+    }
+    :root {
+      --text: #000;
+      --text-dim: #444;
+      --text-faint: #666;
+      --border: #ccc;
+      --border-strong: #999;
+      --glass: #fafafa;
+      --glass-hi: #f0f0f0;
+    }
+    /* The sign-up band survives printing on purpose — a schedule
+       pinned to a fridge should still say where to register. */
+    .page-head, footer { display: none; }
+    .signup-card { break-inside: avoid; }
+    .legend-card, .ribbon, .calendar, .list-day {
+      backdrop-filter: none;
+      box-shadow: none;
+    }
+    .reveal { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<main class="page">
+
+  <!-- The wordmark is the only thing on this page a lost visitor will
+       try to click, so it is the route home. -->
+  <header class="page-head reveal" style="animation-delay: 0s;">
+    <a class="brand" href="index.html"><span class="dot"></span>LUMEN</a>
+    <div class="head-meta">Free · Grades 5 – 8 · Mercer County, NJ</div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero reveal" style="animation-delay: 0.05s;">
+    <div class="eyebrow">Every workshop this summer</div>
+    <h1>August<br><span class="year">2026</span></h1>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">5</span><span class="lbl">Libraries</span></div>
+      <div class="hero-stat"><span class="num">21</span><span class="lbl">Sessions</span></div>
+      <div class="hero-stat"><span class="num">12</span><span class="lbl">Active dates</span></div>
+      <div class="hero-stat"><span class="num">≤ 1h</span><span class="lbl">Each session</span></div>
+    </div>
+  </section>
+
+  <!-- How to sign up. This page is where the site's schedule section
+       sends a parent, and until now it was a dead end: it listed when
+       and where without a single link — no way to act on any of it and
+       no route back. Registration always happens on the host library's
+       own calendar, so those three calendars are the page's real CTA.
+       It sits above the filter cards because a parent who already knows
+       which branch they want should never have to scroll the calendar
+       to find the door. -->
+  <section class="signup reveal" id="signup" style="animation-delay: 0.1s;">
+    <h2 class="section-label">How to sign up</h2>
+    <p class="signup-lede">
+      Every session is free, and each one is booked through the host library&rsquo;s
+      own events calendar &mdash; search &ldquo;LUMEN&rdquo; there, or ask at the
+      desk. Rooms are small, so earlier is safer.
+    </p>
+    <div class="signup-grid">
+      <a class="signup-card" href="https://princetonlibrary.org/events/" target="_blank" rel="noopener noreferrer">
+        <span class="signup-name">Princeton Public Library</span>
+        <span class="signup-note">Aug 10 – 14 · 5 sessions</span>
+        <span class="signup-go">Events calendar <span aria-hidden="true">↗</span></span>
+      </a>
+      <a class="signup-card" href="https://plainsborolibrary.org/childrens-calendar/" target="_blank" rel="noopener noreferrer">
+        <span class="signup-name">Plainsboro Public Library</span>
+        <span class="signup-note">Aug 3 – 13 · 9 sessions</span>
+        <span class="signup-go">Children’s calendar <span aria-hidden="true">↗</span></span>
+      </a>
+      <a class="signup-card" href="https://mcl.org/events" target="_blank" rel="noopener noreferrer">
+        <span class="signup-name">Mercer County Library</span>
+        <span class="signup-note">Hightstown, Hickory Corner &amp; Robbinsville · 7 sessions</span>
+        <span class="signup-go">Events calendar <span aria-hidden="true">↗</span></span>
+      </a>
+    </div>
+    <p class="signup-help">
+      New to LUMEN? <a href="index.html#for-parents">Here’s what an hour looks like</a>.
+      Can’t find a listing, or the session is full? Email
+      <a href="mailto:outreach@lumen-initiative.org">outreach@lumen-initiative.org</a>
+      and we’ll sort it out with the branch.
+    </p>
+  </section>
+
+  <!-- Legend / Filter -->
+  <section class="reveal" style="animation-delay: 0.15s;">
+    <h2 class="section-label">Partners <span style="color: var(--text-ghost); font-weight: 400; letter-spacing: 0.04em; text-transform: none; margin-left: -8px;">— click a card to focus its sessions across the page</span></h2>
+    <div class="legend-grid">
+
+      <button class="legend-card" data-lib-toggle="princeton" aria-pressed="false"
+              style="--c: var(--princeton); --c-rgb: var(--princeton-rgb);">
+        <span class="legend-count">5 sessions</span>
+        <div class="legend-card-head">
+          <span class="legend-dot"></span>
+          <span class="legend-name">Princeton Public</span>
+        </div>
+        <div class="legend-meta">M – F · Aug 10 – 14<br>2:00 – 3:00 PM</div>
+      </button>
+
+      <button class="legend-card" data-lib-toggle="plainsboro" aria-pressed="false"
+              style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+        <span class="legend-count">9 sessions</span>
+        <div class="legend-card-head">
+          <span class="legend-dot"></span>
+          <span class="legend-name">Plainsboro Public</span>
+        </div>
+        <div class="legend-meta">Weekdays · Aug 3 – 13<br>10:30 – 11:30 AM</div>
+      </button>
+
+      <button class="legend-card" data-lib-toggle="hightstown" aria-pressed="false"
+              style="--c: var(--hightstown); --c-rgb: var(--hightstown-rgb);">
+        <span class="legend-count">3 sessions</span>
+        <div class="legend-card-head">
+          <span class="legend-dot"></span>
+          <span class="legend-name">Hightstown · MCL</span>
+        </div>
+        <div class="legend-meta">8/7 · 8/18 · 8/25</div>
+        <div class="legend-topics">Biology · Astronomy · Physics</div>
+      </button>
+
+      <button class="legend-card" data-lib-toggle="hickory" aria-pressed="false"
+              style="--c: var(--hickory); --c-rgb: var(--hickory-rgb);">
+        <span class="legend-count">3 sessions</span>
+        <div class="legend-card-head">
+          <span class="legend-dot"></span>
+          <span class="legend-name">Hickory Corner · MCL</span>
+        </div>
+        <div class="legend-meta">Tuesdays · Aug 4, 18, 25<br>4:00 – 5:00 PM</div>
+        <div class="legend-topics">Biology · Chemistry · Physics</div>
+      </button>
+
+      <button class="legend-card" data-lib-toggle="robbinsville" aria-pressed="false"
+              style="--c: var(--robbinsville); --c-rgb: var(--robbinsville-rgb);">
+        <span class="legend-count">1 session</span>
+        <div class="legend-card-head">
+          <span class="legend-dot"></span>
+          <span class="legend-name">Robbinsville · MCL</span>
+        </div>
+        <div class="legend-meta">Thu · Aug 6<br>3:00 – 4:00 PM</div>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- Ribbon timeline -->
+  <section class="reveal" style="animation-delay: 0.25s;">
+    <h2 class="section-label">Timeline · per library</h2>
+    <div class="ribbon">
+
+      <div class="ribbon-axis">
+        <span class="ribbon-axis-spacer">August</span>
+        <div class="ribbon-axis-days" id="ribbon-axis"></div>
+      </div>
+
+      <!-- One row per library; pins generated inline below -->
+      <div class="ribbon-row" data-lib="princeton" data-active
+           style="--c: var(--princeton); --c-rgb: var(--princeton-rgb);">
+        <div class="ribbon-label">
+          <span class="legend-dot"></span>
+          <span class="lib-name">Princeton</span>
+        </div>
+        <div class="ribbon-track" data-pins="10,11,12,13,14"></div>
+      </div>
+
+      <div class="ribbon-row" data-lib="plainsboro" data-active
+           style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+        <div class="ribbon-label">
+          <span class="legend-dot"></span>
+          <span class="lib-name">Plainsboro</span>
+        </div>
+        <div class="ribbon-track" data-pins="3,4,5,6,7,10,11,12,13"></div>
+      </div>
+
+      <div class="ribbon-row" data-lib="hightstown" data-active
+           style="--c: var(--hightstown); --c-rgb: var(--hightstown-rgb);">
+        <div class="ribbon-label">
+          <span class="legend-dot"></span>
+          <span class="lib-name">Hightstown</span>
+        </div>
+        <div class="ribbon-track" data-pins="7,18,25"></div>
+      </div>
+
+      <div class="ribbon-row" data-lib="hickory" data-active
+           style="--c: var(--hickory); --c-rgb: var(--hickory-rgb);">
+        <div class="ribbon-label">
+          <span class="legend-dot"></span>
+          <span class="lib-name">Hickory</span>
+        </div>
+        <div class="ribbon-track" data-pins="4,18,25"></div>
+      </div>
+
+      <div class="ribbon-row" data-lib="robbinsville" data-active
+           style="--c: var(--robbinsville); --c-rgb: var(--robbinsville-rgb);">
+        <div class="ribbon-label">
+          <span class="legend-dot"></span>
+          <span class="lib-name">Robbinsville</span>
+        </div>
+        <div class="ribbon-track" data-pins="6"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Calendar grid -->
+  <section class="reveal" style="animation-delay: 0.35s;">
+    <h2 class="section-label">Calendar · August 2026</h2>
+    <div class="calendar">
+      <div class="cal-header">
+        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div>
+        <div>Thu</div><div>Fri</div><div>Sat</div>
+      </div>
+      <div class="cal-grid">
+
+        <!-- Row 1: empty until Sat Aug 1 -->
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day weekend"><div class="cal-date">1</div></div>
+
+        <!-- Row 2: Aug 2 – 8 -->
+        <div class="cal-day weekend"><div class="cal-date">2</div></div>
+
+        <div class="cal-day has-events">
+          <div class="cal-date">3</div>
+          <div class="cal-events">
+            <div class="cal-event" data-lib="plainsboro" data-active
+                 style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+              <span class="cal-event-time">10:30a</span>
+              <span class="cal-event-name">Plainsboro</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cal-day has-events">
+          <div class="cal-date">4</div>
+          <div class="cal-events">
+            <div class="cal-event" data-lib="plainsboro" data-active
+                 style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+              <span class="cal-event-time">10:30a</span>
+              <span class="cal-event-name">Plainsboro</span>
+            </div>
+            <div class="cal-event" data-lib="hickory" data-active
+                 style="--c: var(--hickory); --c-rgb: var(--hickory-rgb);">
+              <span class="cal-event-time">4:00p</span>
+              <span class="cal-event-name">Hickory</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cal-day has-events">
+          <div class="cal-date">5</div>
+          <div class="cal-events">
+            <div class="cal-event" data-lib="plainsboro" data-active
+                 style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+              <span class="cal-event-time">10:30a</span>
+              <span class="cal-event-name">Plainsboro</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cal-day has-events">
+          <div class="cal-date">6</div>
+          <div class="cal-events">
+            <div class="cal-event" data-lib="plainsboro" data-active
+                 style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+              <span class="cal-event-time">10:30a</span>
+              <span class="cal-event-name">Plainsboro</span>
+            </div>
+            <div class="cal-event" data-lib="robbinsville" data-active
+                 style="--c: var(--robbinsville); --c-rgb: var(--robbinsville-rgb);">
+              <span class="cal-event-time">3:00p</span>
+              <span class="cal-event-name">Robbinsville</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cal-day has-events">
+          <div class="cal-date">7</div>
+          <div class="cal-events">
+            <div class="cal-event" data-lib="plainsboro" data-active
+                 style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+              <span class="cal-event-time">10:30a</span>
+              <span class="cal-event-name">Plainsboro</span>
+            </div>
+            <div class="cal-event" data-lib="hightstown" data-active
+                 style="--c: var(--hightstown); --c-rgb: var(--hightstown-rgb);">
+              <span class="cal-event-time">2:00p</span>
+              <span class="cal-event-name">Hightstown</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cal-day weekend"><div class="cal-date">8</div></div>
+
+        <!-- Row 3: Aug 9 – 15 -->
+        <div class="cal-day weekend"><div class="cal-date">9</div></div>
+
+        <div class="cal-day has-events">
+          <div class="cal-date">10</div>
+          <div class="cal-events">
+            <div class="cal-event" data-lib="plainsboro" data-active
+                 style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+              <span class="cal-event-time">10:30a</span>
+              <span class="cal-event-name">Plainsboro</span>
+            </div>
+            <div class="cal-event" data-lib="princeton" data-active
+                 style="--c: var(--princeton); --c-rgb: var(--princeton-rgb);">
+              <span class="cal-event-time">2:00p</span>
+              <span class="cal-event-name">Princeton</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cal-day has-events">
+          <div class="cal-date">11</div>
+          <div class="cal-events">
+            <div class="cal-event" data-lib="plainsboro" data-active
+                 style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+              <span class="cal-event-time">10:30a</span>
+              <span class="cal-event-name">Plainsboro</span>
+            </div>
+            <div class="cal-event" data-lib="princeton" data-active
+                 style="--c: var(--princeton); --c-rgb: var(--princeton-rgb);">
+              <span class="cal-event-time">2:00p</span>
+              <span class="cal-event-name">Princeton</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cal-day has-events">
+          <div class="cal-date">12</div>
+          <div class="cal-events">
+            <div class="cal-event" data-lib="plainsboro" data-active
+                 style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+              <span class="cal-event-time">10:30a</span>
+              <span class="cal-event-name">Plainsboro</span>
+            </div>
+            <div class="cal-event" data-lib="princeton" data-active
+                 style="--c: var(--princeton); --c-rgb: var(--princeton-rgb);">
+              <span class="cal-event-time">2:00p</span>
+              <span class="cal-event-name">Princeton</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cal-day has-events">
+          <div class="cal-date">13</div>
+          <div class="cal-events">
+            <div class="cal-event" data-lib="plainsboro" data-active
+                 style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+              <span class="cal-event-time">10:30a</span>
+              <span class="cal-event-name">Plainsboro</span>
+            </div>
+            <div class="cal-event" data-lib="princeton" data-active
+                 style="--c: var(--princeton); --c-rgb: var(--princeton-rgb);">
+              <span class="cal-event-time">2:00p</span>
+              <span class="cal-event-name">Princeton</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cal-day has-events">
+          <div class="cal-date">14</div>
+          <div class="cal-events">
+            <div class="cal-event" data-lib="princeton" data-active
+                 style="--c: var(--princeton); --c-rgb: var(--princeton-rgb);">
+              <span class="cal-event-time">2:00p</span>
+              <span class="cal-event-name">Princeton</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cal-day weekend"><div class="cal-date">15</div></div>
+
+        <!-- Row 4: Aug 16 – 22 -->
+        <div class="cal-day weekend"><div class="cal-date">16</div></div>
+        <div class="cal-day"><div class="cal-date">17</div></div>
+
+        <div class="cal-day has-events">
+          <div class="cal-date">18</div>
+          <div class="cal-events">
+            <div class="cal-event" data-lib="hightstown" data-active
+                 style="--c: var(--hightstown); --c-rgb: var(--hightstown-rgb);">
+              <span class="cal-event-time">10:30a</span>
+              <span class="cal-event-name">Hightstown</span>
+            </div>
+            <div class="cal-event" data-lib="hickory" data-active
+                 style="--c: var(--hickory); --c-rgb: var(--hickory-rgb);">
+              <span class="cal-event-time">4:00p</span>
+              <span class="cal-event-name">Hickory</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cal-day"><div class="cal-date">19</div></div>
+        <div class="cal-day"><div class="cal-date">20</div></div>
+        <div class="cal-day"><div class="cal-date">21</div></div>
+        <div class="cal-day weekend"><div class="cal-date">22</div></div>
+
+        <!-- Row 5: Aug 23 – 29 -->
+        <div class="cal-day weekend"><div class="cal-date">23</div></div>
+        <div class="cal-day"><div class="cal-date">24</div></div>
+
+        <div class="cal-day has-events">
+          <div class="cal-date">25</div>
+          <div class="cal-events">
+            <div class="cal-event" data-lib="hightstown" data-active
+                 style="--c: var(--hightstown); --c-rgb: var(--hightstown-rgb);">
+              <span class="cal-event-time">10:30a</span>
+              <span class="cal-event-name">Hightstown</span>
+            </div>
+            <div class="cal-event" data-lib="hickory" data-active
+                 style="--c: var(--hickory); --c-rgb: var(--hickory-rgb);">
+              <span class="cal-event-time">4:00p</span>
+              <span class="cal-event-name">Hickory</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cal-day"><div class="cal-date">26</div></div>
+        <div class="cal-day"><div class="cal-date">27</div></div>
+        <div class="cal-day"><div class="cal-date">28</div></div>
+        <div class="cal-day weekend"><div class="cal-date">29</div></div>
+
+        <!-- Row 6: Aug 30 – 31 + trailing empty cells -->
+        <div class="cal-day weekend"><div class="cal-date">30</div></div>
+        <div class="cal-day"><div class="cal-date">31</div></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Detail list -->
+  <section class="reveal" style="animation-delay: 0.45s;">
+    <h2 class="section-label">Session detail · chronological</h2>
+    <div class="list">
+
+      <div class="list-day">
+        <div class="list-date">
+          <div class="list-date-num">3</div>
+          <div>
+            <div class="list-date-day">Mon · Aug</div>
+            <div class="list-date-count">1 session</div>
+          </div>
+        </div>
+        <div class="list-events">
+          <div class="list-event" data-lib="plainsboro" data-active
+               style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">10:30 – 11:30 AM</span>
+            <span class="list-event-info"><span class="lib">Plainsboro Public Library</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-day">
+        <div class="list-date">
+          <div class="list-date-num">4</div>
+          <div>
+            <div class="list-date-day">Tue · Aug</div>
+            <div class="list-date-count">2 sessions</div>
+          </div>
+        </div>
+        <div class="list-events">
+          <div class="list-event" data-lib="plainsboro" data-active
+               style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">10:30 – 11:30 AM</span>
+            <span class="list-event-info"><span class="lib">Plainsboro Public Library</span></span>
+          </div>
+          <div class="list-event" data-lib="hickory" data-active
+               style="--c: var(--hickory); --c-rgb: var(--hickory-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">4:00 – 5:00 PM</span>
+            <span class="list-event-info"><span class="lib">Hickory Corner · MCL</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-day">
+        <div class="list-date">
+          <div class="list-date-num">5</div>
+          <div>
+            <div class="list-date-day">Wed · Aug</div>
+            <div class="list-date-count">1 session</div>
+          </div>
+        </div>
+        <div class="list-events">
+          <div class="list-event" data-lib="plainsboro" data-active
+               style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">10:30 – 11:30 AM</span>
+            <span class="list-event-info"><span class="lib">Plainsboro Public Library</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-day">
+        <div class="list-date">
+          <div class="list-date-num">6</div>
+          <div>
+            <div class="list-date-day">Thu · Aug</div>
+            <div class="list-date-count">2 sessions</div>
+          </div>
+        </div>
+        <div class="list-events">
+          <div class="list-event" data-lib="plainsboro" data-active
+               style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">10:30 – 11:30 AM</span>
+            <span class="list-event-info"><span class="lib">Plainsboro Public Library</span></span>
+          </div>
+          <div class="list-event" data-lib="robbinsville" data-active
+               style="--c: var(--robbinsville); --c-rgb: var(--robbinsville-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">3:00 – 4:00 PM</span>
+            <span class="list-event-info"><span class="lib">Robbinsville · MCL</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-day">
+        <div class="list-date">
+          <div class="list-date-num">7</div>
+          <div>
+            <div class="list-date-day">Fri · Aug</div>
+            <div class="list-date-count">2 sessions</div>
+          </div>
+        </div>
+        <div class="list-events">
+          <div class="list-event" data-lib="plainsboro" data-active
+               style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">10:30 – 11:30 AM</span>
+            <span class="list-event-info"><span class="lib">Plainsboro Public Library</span></span>
+          </div>
+          <div class="list-event" data-lib="hightstown" data-active
+               style="--c: var(--hightstown); --c-rgb: var(--hightstown-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">2:00 – 3:00 PM</span>
+            <span class="list-event-info"><span class="lib">Hightstown · MCL</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-day">
+        <div class="list-date">
+          <div class="list-date-num">10</div>
+          <div>
+            <div class="list-date-day">Mon · Aug</div>
+            <div class="list-date-count">2 sessions</div>
+          </div>
+        </div>
+        <div class="list-events">
+          <div class="list-event" data-lib="plainsboro" data-active
+               style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">10:30 – 11:30 AM</span>
+            <span class="list-event-info"><span class="lib">Plainsboro Public Library</span></span>
+          </div>
+          <div class="list-event" data-lib="princeton" data-active
+               style="--c: var(--princeton); --c-rgb: var(--princeton-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">2:00 – 3:00 PM</span>
+            <span class="list-event-info"><span class="lib">Princeton Public Library</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-day">
+        <div class="list-date">
+          <div class="list-date-num">11</div>
+          <div>
+            <div class="list-date-day">Tue · Aug</div>
+            <div class="list-date-count">2 sessions</div>
+          </div>
+        </div>
+        <div class="list-events">
+          <div class="list-event" data-lib="plainsboro" data-active
+               style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">10:30 – 11:30 AM</span>
+            <span class="list-event-info"><span class="lib">Plainsboro Public Library</span></span>
+          </div>
+          <div class="list-event" data-lib="princeton" data-active
+               style="--c: var(--princeton); --c-rgb: var(--princeton-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">2:00 – 3:00 PM</span>
+            <span class="list-event-info"><span class="lib">Princeton Public Library</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-day">
+        <div class="list-date">
+          <div class="list-date-num">12</div>
+          <div>
+            <div class="list-date-day">Wed · Aug</div>
+            <div class="list-date-count">2 sessions</div>
+          </div>
+        </div>
+        <div class="list-events">
+          <div class="list-event" data-lib="plainsboro" data-active
+               style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">10:30 – 11:30 AM</span>
+            <span class="list-event-info"><span class="lib">Plainsboro Public Library</span></span>
+          </div>
+          <div class="list-event" data-lib="princeton" data-active
+               style="--c: var(--princeton); --c-rgb: var(--princeton-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">2:00 – 3:00 PM</span>
+            <span class="list-event-info"><span class="lib">Princeton Public Library</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-day">
+        <div class="list-date">
+          <div class="list-date-num">13</div>
+          <div>
+            <div class="list-date-day">Thu · Aug</div>
+            <div class="list-date-count">2 sessions</div>
+          </div>
+        </div>
+        <div class="list-events">
+          <div class="list-event" data-lib="plainsboro" data-active
+               style="--c: var(--plainsboro); --c-rgb: var(--plainsboro-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">10:30 – 11:30 AM</span>
+            <span class="list-event-info">
+              <span class="lib">Plainsboro Public Library</span>
+              <span class="list-event-tag">Tentative final</span>
+            </span>
+          </div>
+          <div class="list-event" data-lib="princeton" data-active
+               style="--c: var(--princeton); --c-rgb: var(--princeton-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">2:00 – 3:00 PM</span>
+            <span class="list-event-info"><span class="lib">Princeton Public Library</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-day">
+        <div class="list-date">
+          <div class="list-date-num">14</div>
+          <div>
+            <div class="list-date-day">Fri · Aug</div>
+            <div class="list-date-count">1 session</div>
+          </div>
+        </div>
+        <div class="list-events">
+          <div class="list-event" data-lib="princeton" data-active
+               style="--c: var(--princeton); --c-rgb: var(--princeton-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">2:00 – 3:00 PM</span>
+            <span class="list-event-info"><span class="lib">Princeton Public Library</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-day">
+        <div class="list-date">
+          <div class="list-date-num">18</div>
+          <div>
+            <div class="list-date-day">Tue · Aug</div>
+            <div class="list-date-count">2 sessions</div>
+          </div>
+        </div>
+        <div class="list-events">
+          <div class="list-event" data-lib="hightstown" data-active
+               style="--c: var(--hightstown); --c-rgb: var(--hightstown-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">10:30 – 11:30 AM</span>
+            <span class="list-event-info"><span class="lib">Hightstown · MCL</span></span>
+          </div>
+          <div class="list-event" data-lib="hickory" data-active
+               style="--c: var(--hickory); --c-rgb: var(--hickory-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">4:00 – 5:00 PM</span>
+            <span class="list-event-info"><span class="lib">Hickory Corner · MCL</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-day">
+        <div class="list-date">
+          <div class="list-date-num">25</div>
+          <div>
+            <div class="list-date-day">Tue · Aug</div>
+            <div class="list-date-count">2 sessions</div>
+          </div>
+        </div>
+        <div class="list-events">
+          <div class="list-event" data-lib="hightstown" data-active
+               style="--c: var(--hightstown); --c-rgb: var(--hightstown-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">10:30 – 11:30 AM</span>
+            <span class="list-event-info"><span class="lib">Hightstown · MCL</span></span>
+          </div>
+          <div class="list-event" data-lib="hickory" data-active
+               style="--c: var(--hickory); --c-rgb: var(--hickory-rgb);">
+            <span class="legend-dot"></span>
+            <span class="list-event-time">4:00 – 5:00 PM</span>
+            <span class="list-event-info"><span class="lib">Hickory Corner · MCL</span></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- A parent who reads all the way down here has just finished the
+       last session in the list; the next thing they need is a way to
+       act on it, not a build stamp. -->
+  <footer>
+    <span>LUMEN · Lift Up Minds, Empower Neighborhoods</span>
+    <nav class="foot-links" aria-label="LUMEN">
+      <a href="index.html">Home</a>
+      <a href="#signup">How to sign up</a>
+      <a href="index.html#courses">The eight courses</a>
+      <a href="mailto:outreach@lumen-initiative.org">outreach@lumen-initiative.org</a>
+    </nav>
+  </footer>
+
+</main>
+
+<script>
+  // Build ribbon axis: days 1–31 with weekend / major-day labeling.
+  // Aug 1, 2026 is a Saturday → weekday index 6 for day 1.
+  (function buildAxis() {
+    const axis = document.getElementById('ribbon-axis');
+    if (!axis) return;
+    const aug1Weekday = 6; // Sat
+    const frag = document.createDocumentFragment();
+    for (let d = 1; d <= 31; d++) {
+      const wd = (aug1Weekday + d - 1) % 7;
+      const isWeekend = wd === 0 || wd === 6;
+      const span = document.createElement('span');
+      span.textContent = d;
+      if (isWeekend) span.classList.add('weekend');
+      if (d === 1 || d % 5 === 0 || d === 31) span.classList.add('major');
+      frag.appendChild(span);
+    }
+    axis.appendChild(frag);
+  })();
+
+  // Place colored pins inside each ribbon track from data-pins attribute.
+  (function buildPins() {
+    const aug1Weekday = 6;
+    document.querySelectorAll('.ribbon-track').forEach(track => {
+      const days = (track.dataset.pins || '').split(',').map(s => parseInt(s.trim(), 10)).filter(Boolean);
+      const set = new Set(days);
+      const frag = document.createDocumentFragment();
+      for (let d = 1; d <= 31; d++) {
+        const wd = (aug1Weekday + d - 1) % 7;
+        const cell = document.createElement('div');
+        cell.className = 'ribbon-cell' + (wd === 0 || wd === 6 ? ' weekend' : '');
+        if (set.has(d)) {
+          const pin = document.createElement('span');
+          pin.className = 'ribbon-pin';
+          pin.title = `Aug ${d}`;
+          cell.appendChild(pin);
+        }
+        frag.appendChild(cell);
+      }
+      track.appendChild(frag);
+    });
+  })();
+
+  // Click-to-focus: clicking a partner card filters the rest of the page.
+  // Click again, click empty space, or hit Esc to clear.
+  (function buildFilter() {
+    const body = document.body;
+    const cards = document.querySelectorAll('[data-lib-toggle]');
+
+    function applyFocus(lib) {
+      if (lib) {
+        body.dataset.focus = lib;
+      } else {
+        delete body.dataset.focus;
+      }
+      cards.forEach(c => {
+        c.setAttribute('aria-pressed', c.dataset.libToggle === lib ? 'true' : 'false');
+      });
+      // Toggle data-active on every event/row to drive opacity.
+      document.querySelectorAll('[data-lib]').forEach(el => {
+        if (!lib || el.dataset.lib === lib) {
+          el.setAttribute('data-active', '');
+        } else {
+          el.removeAttribute('data-active');
+        }
+      });
+    }
+
+    cards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const lib = card.dataset.libToggle;
+        applyFocus(body.dataset.focus === lib ? null : lib);
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('[data-lib-toggle]') && body.dataset.focus) {
+        applyFocus(null);
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && body.dataset.focus) applyFocus(null);
+    });
+  })();
+</script>
+
+</body>
+</html>
